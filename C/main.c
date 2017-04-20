@@ -8,31 +8,15 @@
 
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    int n,m;
-    double p;
-    
-    printf("请输入总人数n：");
-    scanf("%d",&n);
-    printf("请输入初始位置m：");
-    scanf("%d",&m);
-    
-    if (n % 2 == 0) {
-        if (m % 2 == 0)
-            p=2*m/(n*n);
-        else
-            p=2*(m-1)/(n*n);
-    }
-    else{
-        if (m % 2 == 0)
-            p=2*m/(n*n-1);
-        else
-            p=2*(m-1)/(n*n-1);
-    }
-    
-    printf("%lf",p);
-    
+int main(int argc, const char * argv[]) {
+    int a[2][4]={{1,2,3,4},{5,6,7,8}};
+    printf("\t%d\t%d",a[1][1],a[1][2]);
+    //int (*p)[4]=a;
+    //printf("\t%d\t%d",(*p)[1],(*p)[2]);
+    //++p;
+    //printf("\t%d\t%d",(*p)[2],(*p)[3]);
     return 0;
 }
 
