@@ -8,9 +8,16 @@
 
 #include "Hero.h"
 
+//extern Hero heros[5];
 
 int main(int argc, const char * argv[]) {
-    InputHero();
+    
+    
+    
+    //InputHero();
+    ShowHero();
+    
+    
     printf("Hello, World!\n");
     return 0;
 }

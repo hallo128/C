@@ -8,7 +8,11 @@
 
 #include "Hero.h"
 
-Hero heros[5];
+Hero heros[]={
+    {1,"aa",'m',{1,"法师","bilibii专家"},100,3.98,{1,"远程消耗","远程"},{2010,9,10}},
+    {2,"ba",'f',{3,"战士","肉特别厚"},300,2.98,{2,"耐打","肉"},{2010,9,30}}
+};    //定义5个英雄
+
 //设定一个职业数组,让用户进行选择
 Job jobs[]={
     {1,"法师","bilibii专家"},
@@ -28,6 +32,10 @@ Job jobs[]={
  PubTime pubTime;//英雄上线时间
  */
 
+/*
+ *函数的实现
+ */
+
 //用来输入英雄的值
 void InputHero(){
     //动态录入
@@ -35,12 +43,14 @@ void InputHero(){
     for (i=0; i<1; i++) { //5
         printf("请输入第%d位英雄的信息：\n",i+1);
         heros[i].id = i+1;
+        //char * 类型——需要先动态赋空间
         printf("名称:");
         heros[i].name=(char *)malloc(50);
         scanf("%s",heros[i].name);
-        printf("性别:");
-        scanf("%c",&heros[i].sex);
-        fflush(stdin);                  //录入字符后记得清空缓冲区
+        //
+        printf("性别:\n");
+        scanf("%c",&(heros[i].sex));
+        fflush(stdin);                      //录入单个字符后记得清空缓冲区（输入的良好习惯）
         //设定一个职业数组,让用户进行选择
         for (j=0; j<5; j++) {
             printf("%d.%s\n",j+1,jobs[j].name);
@@ -56,5 +66,13 @@ void InputHero(){
 
 //用来输出英雄的值
 void ShowHero(){
+    int i;
+    int len=sizeof(heros)/sizeof(Hero);
+    heros[0].name=(char *)malloc(50);
+    scanf("%s",heros[i].name);
+    //printf("%d",len);
+    for (i=0; i<len; i++) {
+        printf("%s\t%s\t\n",heros[i].name,heros[i].job.name);
+    }
     
 }
